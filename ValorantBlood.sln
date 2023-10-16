@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValorantBlood", "ValorantBlood.csproj", "{125A6EBA-52A9-410E-B12D-5CADBE1EE034}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{125A6EBA-52A9-410E-B12D-5CADBE1EE034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125A6EBA-52A9-410E-B12D-5CADBE1EE034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125A6EBA-52A9-410E-B12D-5CADBE1EE034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125A6EBA-52A9-410E-B12D-5CADBE1EE034}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF5721C3-469E-47CC-A558-ED06B27EC943}
+	EndGlobalSection
+EndGlobal
