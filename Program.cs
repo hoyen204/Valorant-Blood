@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Security.Principal;
 using ValorantBlood.Properties;
 
 namespace ValorantBlood
@@ -13,13 +14,41 @@ namespace ValorantBlood
         public static string MATURE_PAK = Path.Combine(PAKS_PATH, "MatureData-WindowsClient.pak");
         public static string MATURE_SIG = Path.Combine(PAKS_PATH, "MatureData-WindowsClient.sig");
 
+        static bool IsPathOnCDrive(string path)
+        {
+            // Get the drive letter from the path (e.g., "C:")
+            string driveLetter = Path.GetPathRoot(path) ?? string.Empty;
+
+            // Compare the drive letter to "C:"
+            return driveLetter.Contains("C:", StringComparison.OrdinalIgnoreCase);
+        }
+
         public static void Main(string[] args)
         {
             Console.Write($"Select Valorant path ({VALORANT_DEFAULT_PATH}): ");
+
+            
             string input = Console.ReadLine() ?? string.Empty;
+            
+
             if (!string.IsNullOrEmpty(input))
             {
                 VALORANT_DEFAULT_PATH = input;
+            }
+
+            if (IsPathOnCDrive(VALORANT_DEFAULT_PATH))
+            {
+                WindowsIdentity identity = WindowsIdentity.GetCurrent();
+                WindowsPrincipal principal = new WindowsPrincipal(identity);
+
+
+                if (!principal.IsInRole(WindowsBuiltInRole.Administrator))
+                {
+                    Console.WriteLine("If your game is on drive C, please restart it with administrator privileges.");
+                    Console.WriteLine("Press any key to continue ...");
+                    Console.ReadLine();
+                    return;
+                }
             }
 
             var ValorantLivePath = Path.Combine(VALORANT_DEFAULT_PATH, "live");
