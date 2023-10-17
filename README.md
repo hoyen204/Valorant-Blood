@@ -15,8 +15,8 @@ Follow these steps to build and run the project:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/your-project.git
-   cd your-project
+   git clone https://github.com/hoyen204/Valorant-Blood.git
+   cd Valorant-Blood
    ```
 
 2. Build the project using the .NET CLI:
